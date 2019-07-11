@@ -1,0 +1,21 @@
+/* About me header */
+
+body {
+  margin: 0;
+}
+
+section {
+  padding: 40px 70px 40px;
+}
+
+p {
+  font-size: 25px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.bio {
+  background-color: teal;
+}
