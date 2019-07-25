@@ -16,53 +16,60 @@ function fetchJSONFile(path, callback) {
 
 // https://newsapi.org/v2/everything?q=bitcoin&from=2019-06-24&sortBy=publishedAt&apiKey=e414cd4bd8394571a02ab95b2502223e
 function init() {
-  var data = JSON.parse('data.json');
+  fetchJSONFile('data.json', function(data) {
+    console.log(data)
+  });
   // fetchJSONFile('data.json', function(data) {
-  //     // do something with your data
-  //     document.getElementById("showData").innerHTML = data.articles[1].author;
-  //
-  //   // EXTRACT VALUE FOR HTML HEADER.
-  //   // ('Book ID', 'Book Name', 'Category' and 'Price')
-  //   var col = [];
-  //   for (var i = 0; i < data.articles.length; i++) {
-  //       for (var key in data.articles[i]) {
-  //           if (col.indexOf(key) === -1) {
-  //               col.push(key);
-  //           }
-  //       }
-  //   }
-  //
-  //   // CREATE DYNAMIC TABLE.
-  //   var table = document.createElement("table");
-  //
-  //   // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-  //
-  //   var tr = table.insertRow(-1);                   // TABLE ROW.
-  //
-  //   for (var i = 0; i < col.length; i++) {
-  //       var th = document.createElement("th");      // TABLE HEADER.
-  //       th.innerHTML = col[i];
-  //       tr.appendChild(th);
-  //   }
-  //
-  //   // ADD JSON DATA TO THE TABLE AS ROWS.
-  //   for (var i = 0; i < data.articles.length; i++) {
-  //
-  //       tr = table.insertRow(-1);
-  //
-  //       for (var j = 0; j < col.length; j++) {
-  //           var tabCell = tr.insertCell(-1);
-  //           tabCell.innerHTML = data.articles[i][col[j]];
-  //       }
-  //   }
-  //
-  //   // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-  //   var divContainer = document.getElementById("showData");
-  //   divContainer.innerHTML = "";
-  //   divContainer.appendChild(table);
-  // //
-  // });
+    // document.getElementById("articleImage").src = data.articles[0].urlToImage;
+    // document.getElementById("articleSource").innerHTML = data.articles[0].source.name;
+    // document.getElementById("articleAuthor").innerHTML = data.articles[0].author;
+    // document.getElementById("articleTitle").innerHTML = data.articles[0].title;
+    // document.getElementById("articleContent").innerHTML = data.articles[0].content;
 
+    // var articleImage = document.createElement('img');
+    // articleImage.src = data.articles[0].urlToImage;
+    // articleImage.height = 300;
+    // document.getElementById('showStory').appendChild(articleImage);
+    //
+    // var articleSource = document.createElement('p');
+    // articleSource.innerHTML = data.articles[0].source.name;
+    // document.getElementById('showStory').appendChild(articleSource);
+    //
+    // var articleAuthor = document.createElement('p');
+    // articleAuthor.innerHTML = data.articles[0].author;
+    // document.getElementById('showStory').appendChild(articleAuthor);
+    //
+    // var articleTitle = document.createElement('p');
+    // articleTitle.innerHTML = data.articles[0].title;
+    // document.getElementById('showStory').appendChild(articleTitle);
+    //
+    // var articleContent = document.createElement('p');
+    // articleContent.innerHTML = data.articles[0].content;
+    // document.getElementById('showStory').appendChild(articleContent);
+
+    // for (var i = 0; i < data.articles.length; i++) {
+    //   var articleImage = document.createElement('img');
+    //   articleImage.src = data.articles[i].urlToImage;
+    //   articleImage.height = 300;
+    //   document.getElementById('showStory').appendChild(articleImage);
+    //
+    //   var articleSource = document.createElement('p');
+    //   articleSource.innerHTML = data.articles[i].source.name;
+    //   document.getElementById('showStory').appendChild(articleSource);
+    //
+    //   var articleAuthor = document.createElement('p');
+    //   articleAuthor.innerHTML = data.articles[i].author;
+    //   document.getElementById('showStory').appendChild(articleAuthor);
+    //
+    //   var articleTitle = document.createElement('p');
+    //   articleTitle.innerHTML = data.articles[i].title;
+    //   document.getElementById('showStory').appendChild(articleTitle);
+    //
+    //   var articleContent = document.createElement('p');
+    //   articleContent.innerHTML = data.articles[i].content;
+    //   document.getElementById('showStory').appendChild(articleContent);
+    // }
+  // });
 }
 
 window.onload = init;
